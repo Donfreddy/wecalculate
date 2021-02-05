@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:wecalculate/src/constant.dart';
 import 'package:wecalculate/src/key.dart';
 import 'package:wecalculate/src/key_controller.dart';
 import 'package:wecalculate/src/key_symbol.dart';
@@ -29,12 +30,21 @@ class CalculatorKey extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double size = MediaQuery.of(context).size.width / 5;
+    double pSize = MediaQuery.of(context).size.width / 6;
+    double lSize = MediaQuery.of(context).size.width / 16;
+
+    print("portrait width ============= $pSize");
+    print("Landscape width ============= $lSize");
+
+    double pWidth = (symbol == Keys.zero)
+        ? ((pSize + 2 * pSize / 4) * 2)
+        : pSize + 2 * pSize / 4;
+    double lWidth = (symbol == Keys.zero) ? (lSize * 2) * 2 : lSize * 2;
 
     return Container(
-      width: (symbol == Keys.zero) ? ((size + size / 4) * 2) : size + size / 4,
+      width: isPortrait(context) ? pWidth : lWidth,
       padding: EdgeInsets.all(2),
-      height: size,
+      height: isPortrait(context) ? pSize : lSize,
       color: Colors.transparent,
       child: Material(
         elevation: 1,
@@ -48,7 +58,7 @@ class CalculatorKey extends StatelessWidget {
           child: Center(
             child: Text(
               symbol.value,
-              style: Theme.of(context).textTheme.headline4.copyWith(
+              style: Theme.of(context).textTheme.headline6.copyWith(
                     color: isOperator() ? Colors.white : Color(0xFFECE1E7),
                     fontWeight: isOperator() ? FontWeight.bold : null,
                   ),

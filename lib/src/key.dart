@@ -21,4 +21,25 @@ abstract class Keys {
   static KeySymbol seven = const KeySymbol('7');
   static KeySymbol eight = const KeySymbol('8');
   static KeySymbol nine = const KeySymbol('9');
+
+  static KeySymbol sin = const KeySymbol('sin');
+  static KeySymbol cos = const KeySymbol('cos');
+  static KeySymbol tg = const KeySymbol('tan');
+  static KeySymbol i = const KeySymbol('i');
+  static KeySymbol ln = const KeySymbol('ln');
+  static KeySymbol lnt = const KeySymbol('lnt');
+  static KeySymbol expo2 = const KeySymbol('^2');
+  static KeySymbol expo3 = const KeySymbol('^3');
+  static KeySymbol log = const KeySymbol('log');
+  static KeySymbol dms = const KeySymbol('dms');
+  static KeySymbol mod = const KeySymbol('Mod');
+  static KeySymbol expoX = const KeySymbol('^x');
+  static KeySymbol pi = const KeySymbol('π');
+  static KeySymbol expo = const KeySymbol('e');
+  static KeySymbol excl = const KeySymbol('!');
+  static KeySymbol racine = const KeySymbol('√');
+  static KeySymbol openP = const KeySymbol('(');
+  static KeySymbol closeP = const KeySymbol(')');
+  static KeySymbol exp = const KeySymbol('Exp');
+  static KeySymbol fe = const KeySymbol('F-E');
 }
